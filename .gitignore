@@ -1,0 +1,39 @@
+# Please take extra care not to add rules that will make tracked files ignored.
+# To test that, run `git ls-files -i --exclude-standard`.
+# To check why a specific file is ignored, run `git check-ignore -v <filepath>`.
+
+# === Rule for dotfiles ===
+# Ignore all dotfiles.
+.*
+# Exclude specific dotfiles that we want to track.
+!.eleventy.js
+!.babelrc
+!.editorconfig
+!.eslintignore
+!.eslintrc.js
+!.flake8
+!.gitattributes
+!.github
+!.gitignore
+!.gitkeep
+!.travis.yml
+!.eslintrc.yaml
+
+# === Rules for `node_modules` ===
+!**/node_modules/**
+/node_modules
+
+# === Rules for test artifacts ===
+/node_trace.*.log
+
+# === Global Rules ===
+# Keep last to avoid being excluded
+*.pyc
+__pycache__
+.DS_Store
+*~
+
+# === Site build ===
+/public
+/src/site/static/css
+/src/site/static/js

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee ratio calculator</title>
+
+    <style>
+        .calculator {
+            max-width: 30em;
+            padding: 1.4em;
+            display: grid;
+            grid-template-columns: 10em 1fr;
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', setup);
+
+        function setup(){
+            document.querySelector('#water-amount').addEventListener('input', calculate);
+        }
+
+        function calculate(){
+            let waterAmount = document.querySelector('#water-amount').value;
+            let coffeePerLitre = document.querySelector('#coffee-per-litre').value;
+
+            document.querySelector('#ground-weight').value = coffeePerLitre * waterAmount / 1000;
+        }
+    </script>
+</head>
+<body>
+    <h1>Coffee ratio calculator</h1>
+
+    <fieldset class="calculator">
+        <label for="water-amount">Amount of water</label>
+        <input type="number" name="water-amount" id="water-amount" />
+
+        <label for="coffee-per-litre">Coffee per litre</label>
+        <input type="number" name="coffee-per-litre" id="coffee-per-litre" value="60" />
+
+        <label for="ground-weight">Ground weight</label>
+        <input type="text" name="ground-weight" id="ground-weight" />
+    </fieldset>
+</body>
+</html>

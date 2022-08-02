@@ -1,0 +1,19 @@
+@import 'normalise';
+
+:root {
+  --back: #fff1e3;
+  --fore: #000;
+  --head: #af54a3;
+}
+
+body {
+  font: 1em/1.4em 'Inter', sans-serif;
+  background-color: var(--back);
+  margin: 1em;
+}
+
+h1 {
+  font: 2em/2.4em 'Permanent Marker', cursive;
+  color: var(--head);
+
+}

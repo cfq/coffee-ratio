@@ -26,6 +26,9 @@
 # === Rules for test artifacts ===
 /node_trace.*.log
 
+# === Rules for dev artifacts ===
+*.hot-update.*
+
 # === Global Rules ===
 # Keep last to avoid being excluded
 *.pyc

@@ -12,8 +12,35 @@ body {
   margin: 1em;
 }
 
-h1 {
-  font: 2em/2.4em 'Permanent Marker', cursive;
+h1, h2 {
+  font-family: 'Permanent Marker', cursive;
   color: var(--head);
+  line-height: 1.4em;
+}
 
+#calculator {
+  label {
+    display: block;
+    margin: 1em 0;
+
+    input[type="text"], input[type="number"] {
+      margin-left: 1ch;
+      max-width: 6ch;
+      border: none;
+      border-bottom: 1px solid var(--fore);
+      background: none;
+    }
+  }
+
+  label, p {
+    font-weight: bold;;
+  }
+
+  span {
+    font-weight: normal;
+  }
+}
+
+#iced-ratios {
+  margin-top: 2em;
 }

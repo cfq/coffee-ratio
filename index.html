@@ -1,47 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee ratio calculator</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee ratio calculator</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Permanent+Marker&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Permanent+Marker&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css" />
-    <link rel="stylesheet" href="static/css/styles.css" />
-    <script src="static/js/main.js"></script>
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css" />
+  <link rel="stylesheet" href="static/css/styles.css" />
+  <script src="static/js/main.js"></script>
 </head>
+
 <body>
   <main>
     <h1>Coffee ratio calculator</h1>
 
     <section id="calculator">
-      <label for="water-amount">Amount of water</label>
-      <input type="number" name="water-amount" id="water-amount" />
-
-      <label for="coffee-per-litre">Coffee per litre</label>
-      <input type="number" name="coffee-per-litre" id="coffee-per-litre" value="60" />
-
-      <label for="ground-weight">Ground weight</label>
-      <input type="text" name="ground-weight" id="ground-weight" />
-
-      <label for="bloom-range">Bloom range</label>
-      <input type="text" disabled name="bloom-range" id="bloom-range" />
-
-      <label for="sixty-percent">60% weight</label>
-      <input type="text" disabled name="sixty-percent" id="sixty-percent" />
-
-      <label for="forty-percent">40% weight</label>
-      <input type="text" disabled name="forty-percent" id="forty-percent" />
-
-      <label for="">
-        Iced coffee
-        <input type="checkbox" name="is-iced-coffee" id="is-iced-coffee" />
+      <label>
+        Amount of water:
+        <input type="number" name="water-amount" id="water-amount" />
       </label>
+
+      <label>
+        Coffee per litre:
+        <input type="number" name="coffee-per-litre" id="coffee-per-litre" value="60" />
+      </label>
+
+      <label>
+        Ground weight:
+        <input type="number" name="ground-weight" id="ground-weight" />
+      </label>
+
+      <p>
+        Bloom range:
+        <span id="bloom-range"></span>
+      </p>
+
+      <p>
+        60% weight:
+        <span id="sixty-percent"></span>
+      </p>
+
+      <p>
+        40% weight:
+        <span id="forty-percent"></span>
+      </p>
+
+      <section id="iced-ratios">
+        <h2>If iced</h2>
+        <p>
+          Ice weight:
+          <span id="ice-weight"></span>
+        </p>
+
+        <p>
+          Water weight:
+          <span id="ice-water-weight"></span>
+        </p>
+
+        <p>
+          Grounds weight:
+          <span id="iced-grounds-weight"></span>
+        </p>
+      </section>
     </section>
   </main>
 </body>
+
 </html>

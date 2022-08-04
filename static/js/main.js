@@ -3017,7 +3017,8 @@ __webpack_require__(23);
 document.addEventListener('DOMContentLoaded', setup);
 const ff = new Intl.NumberFormat('en-GB', {
   style: 'decimal',
-  maximumFractionDigits: 2
+  maximumFractionDigits: 2,
+  useGrouping: false
 }).format;
 
 function setup() {
@@ -3036,15 +3037,19 @@ function calculate(event) {
 
   if (event.target?.id === 'water-amount') {
     groundWeight = waterAmount * coffeePerLitre / 1000;
+    document.querySelector('#coffee-per-litre').value = ff(coffeePerLitre);
+    document.querySelector('#ground-weight').value = ff(groundWeight);
   } else if (event.target?.id === 'coffee-per-litre') {
     groundWeight = waterAmount * coffeePerLitre / 1000;
+    document.querySelector('#water-amount').value = ff(waterAmount);
+    document.querySelector('#ground-weight').value = ff(groundWeight);
   } else if (event.target?.id === 'ground-weight') {
     waterAmount = groundWeight * 1000 / coffeePerLitre;
-  } else return false;
+    document.querySelector('#water-amount').value = ff(waterAmount);
+    document.querySelector('#coffee-per-litre').value = ff(coffeePerLitre);
+  } else return false; // console.log({waterAmount, coffeePerLitre, groundWeight});
 
-  document.querySelector('#water-amount').value = waterAmount;
-  document.querySelector('#coffee-per-litre').value = coffeePerLitre;
-  document.querySelector('#ground-weight').value = groundWeight;
+
   document.querySelector('#bloom-range').innerHTML = `${ff(groundWeight * 2)}gr to ${ff(groundWeight * 3)}gr`;
   document.querySelector('#sixty-percent').innerHTML = `${ff(waterAmount * .6)}gr`;
   document.querySelector('#forty-percent').innerHTML = `${ff(waterAmount * .4)}gr`;
@@ -3062,7 +3067,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1659651771267
+      // 1659653867545
       var cssReload = __webpack_require__(24)(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -3496,7 +3501,7 @@ module.exports = function (urlString) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("a309de9abb00513e7bb7")
+/******/ 		__webpack_require__.h = () => ("904be70851998059811e")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', setup);
 
 const ff = new Intl.NumberFormat('en-GB', {
   style: 'decimal',
-  maximumFractionDigits: 2
+  maximumFractionDigits: 2,
+  useGrouping: false
 }).format;
 
 function setup() {
@@ -24,16 +25,21 @@ function calculate( event ) {
 
   if( event.target?.id === 'water-amount' ) {
     groundWeight = waterAmount * coffeePerLitre / 1000;
+    document.querySelector('#coffee-per-litre').value = ff(coffeePerLitre);
+    document.querySelector('#ground-weight').value = ff(groundWeight);
   }else if ( event.target?.id === 'coffee-per-litre' ){
     groundWeight = waterAmount * coffeePerLitre / 1000;
+    document.querySelector('#water-amount').value = ff(waterAmount);
+    document.querySelector('#ground-weight').value = ff(groundWeight);
   }else if ( event.target?.id === 'ground-weight' ){
     waterAmount = groundWeight * 1000 / coffeePerLitre;
+    document.querySelector('#water-amount').value = ff(waterAmount);
+    document.querySelector('#coffee-per-litre').value = ff(coffeePerLitre);
   }else
     return false;
 
-  document.querySelector('#water-amount').value = waterAmount;
-  document.querySelector('#coffee-per-litre').value = coffeePerLitre;
-  document.querySelector('#ground-weight').value = groundWeight;
+  // console.log({waterAmount, coffeePerLitre, groundWeight});
+
   document.querySelector('#bloom-range').innerHTML = `${ff(groundWeight * 2)}gr to ${ff(groundWeight * 3)}gr`;
   document.querySelector('#sixty-percent').innerHTML = `${ff(waterAmount * .6)}gr`;
   document.querySelector('#forty-percent').innerHTML = `${ff(waterAmount * .4)}gr`;

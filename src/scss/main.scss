@@ -1,8 +1,6 @@
-@import 'normalise';
-
 :root {
   --back: #fff1e3;
-  --fore: #000;
+  --fore: rgb(68 54 54 / 90%);
   --head: #af54a3;
 }
 
@@ -10,6 +8,7 @@ body {
   font: 1em/1.4em 'Inter', sans-serif;
   background-color: var(--back);
   margin: 1em;
+  color: var(--fore);
 }
 
 h1, h2 {
@@ -23,9 +22,12 @@ h1, h2 {
     display: block;
     margin: 1em 0;
 
-    input[type="text"], input[type="number"] {
+    input {
       margin-left: 1ch;
       max-width: 6ch;
+      font: 1em 'Inter', sans-serif;
+      color: var(--fore);
+      padding: 0 0 0.1em 0;
       border: none;
       border-bottom: 1px solid var(--fore);
       background: none;
@@ -38,6 +40,7 @@ h1, h2 {
 
   span {
     font-weight: normal;
+    margin-left: 0.3ch;
   }
 }
 

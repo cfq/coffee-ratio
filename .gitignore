@@ -37,5 +37,4 @@ __pycache__
 *~
 
 # === Site build ===
-/static/css
-/static/js
+/dist

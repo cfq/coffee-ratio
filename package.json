@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "npm run clean && webpack-dev-server",
-    "build": "",
-    "clean": "rimraf static/css static/js"
+    "dev": "npx vite",
+    "build": "npx vite build",
+    "clean": "rimraf dist"
   },
   "devDependencies": {
     "rimraf": "^5.0.1",
